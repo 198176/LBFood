@@ -44,7 +44,7 @@ public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImages
             @Override
             public void onClick(View v) {
                 if (listener != null) {
-                    listener.onClick(position);
+                    listener.onClick(foods.get(position));
                 }
             }
         });
@@ -56,7 +56,7 @@ public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImages
     }
 
     public interface Listener {
-        void onClick(int position);
+        void onClick(Food food);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

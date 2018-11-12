@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/topFragment">
+
+    <fragment
+        android:id="@+id/topFragment"
+        android:name="com.example.user.lbfood.fragments.TopFragment"
+        android:label="@string/top_fragment"
+        tools:layout="@layout/recycler_view" >
+        <action
+            android:id="@+id/action_topFragment_to_foodDetailsFragment"
+            app:destination="@id/foodDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/pizzaFragment"
+        android:name="com.example.user.lbfood.fragments.PizzaFragment"
+        android:label="@string/pizza_fragment"
+        tools:layout="@layout/recycler_view" >
+        <action
+            android:id="@+id/action_pizzaFragment_to_foodDetailsFragment"
+            app:destination="@id/foodDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chineseFragment"
+        android:name="com.example.user.lbfood.fragments.ChineseFragment"
+        android:label="@string/chinese_fragment"
+        tools:layout="@layout/recycler_view" >
+        <action
+            android:id="@+id/action_chineseFragment_to_foodDetailsFragment"
+            app:destination="@id/foodDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kebabFragment"
+        android:name="com.example.user.lbfood.fragments.KebabFragment"
+        android:label="@string/kebab_fragment"
+        tools:layout="@layout/recycler_view" >
+        <action
+            android:id="@+id/action_kebabFragment_to_foodDetailsFragment"
+            app:destination="@id/foodDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailsFragment"
+        android:name="com.example.user.lbfood.fragments.FoodDetailsFragment"
+        android:label="@string/food_details_fragment"
+        tools:layout="@layout/fragment_food_details" >
+        <argument
+            android:name="idFood"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_foodDetailsFragment_to_nav_second"
+            app:destination="@id/nav_second"
+            app:popUpTo="@+id/topFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantFragment"
+        android:name="com.example.user.lbfood.fragments.RestaurantFragment"
+        android:label="@string/restaurant_fragment" >
+        <action
+            android:id="@+id/action_restaurantFragment_to_restaurantDetailsFragment"
+            app:destination="@id/restaurantDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantDetailsFragment"
+        android:name="com.example.user.lbfood.fragments.RestaurantDetailsFragment"
+        android:label="@string/restaurant_details_fragment"
+        tools:layout="@layout/fragment_restaurant_details" >
+        <action
+            android:id="@+id/action_restaurantDetailsFragment_to_pizzaFragment"
+            app:destination="@id/pizzaFragment" />
+        <action
+            android:id="@+id/action_restaurantDetailsFragment_to_chineseFragment"
+            app:destination="@id/chineseFragment" />
+        <action
+            android:id="@+id/action_restaurantDetailsFragment_to_kebabFragment"
+            app:destination="@id/kebabFragment" />
+        <argument
+            android:name="restName"
+            app:argType="string" />
+        <argument
+            android:name="restID"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderedFragment"
+        android:name="com.example.user.lbfood.fragments.OrderedFragment"
+        tools:layout="@layout/fragment_ordered" >
+        <deepLink app:uri="www.example.com/ordered"/>
+    </fragment>
+    <activity
+        android:id="@+id/secondActivity"
+        android:name="com.example.user.lbfood.SecondActivity"
+        android:label="activity_second"
+        tools:layout="@layout/activity_second" />
+    <include app:graph="@navigation/nav_second" />
+</navigation>

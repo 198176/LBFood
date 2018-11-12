@@ -5,17 +5,20 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_main"
+            android:id="@+id/topFragment"
             android:title="Strona główna" />
         <item
-            android:id="@+id/nav_pizza"
+            android:id="@+id/pizzaFragment"
             android:title="Pizza" />
         <item
-            android:id="@+id/nav_chinese"
+            android:id="@+id/chineseFragment"
             android:title="Chińskie" />
         <item
-            android:id="@+id/nav_kebab"
+            android:id="@+id/kebabFragment"
             android:title="Kebab" />
+        <item
+            android:id="@+id/restaurantFragment"
+            android:title="Restauracje" />
     </group>
 
 </menu>

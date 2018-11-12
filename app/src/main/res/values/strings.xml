@@ -1,10 +1,18 @@
 <resources>
     <string name="app_name">LBFood</string>
-    <string name="app_name_food">Co dzisiaj jemy?</string>
+    <string name="top_fragment">Co dzisiaj jemy?</string>
+    <string name="pizza_fragment">Może pizza?</string>
+    <string name="chinese_fragment">Może chińskie?</string>
+    <string name="kebab_fragment">Może kebab?</string>
+    <string name="restaurant_fragment">Skąd zamawiamy?</string>
+    <string name="food_details_fragment">Zamawiamy?</string>
+    <string name="restaurant_details_fragment">Sprawdzamy menu?</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <string name="title_activity_second">SecondActivity</string>
 </resources>

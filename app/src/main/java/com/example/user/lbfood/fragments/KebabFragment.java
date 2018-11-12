@@ -1,24 +1,28 @@
 package com.example.user.lbfood.fragments;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.user.lbfood.R;
 import com.example.user.lbfood.adapters.CaptionedImagesAdapter;
 import com.example.user.lbfood.models.Food;
-import com.example.user.lbfood.R;
 
 import java.util.ArrayList;
 
+import androidx.navigation.Navigation;
+
 public class KebabFragment extends Fragment implements CaptionedImagesAdapter.Listener {
+
+    RecyclerView kebabRecycler;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        RecyclerView kebabRecycler = (RecyclerView) inflater.inflate(
+        kebabRecycler = (RecyclerView) inflater.inflate(
                 R.layout.recycler_view, container, false);
         ArrayList<Food> kebabs = new ArrayList<>();
         for (Food food : Food.foods) {
@@ -32,7 +36,7 @@ public class KebabFragment extends Fragment implements CaptionedImagesAdapter.Li
     }
 
     @Override
-    public void onClick(int position) {
-
+    public void onClick(Food food) {
+        Navigation.findNavController(kebabRecycler).navigate(KebabFragmentDirections.actionKebabFragmentToFoodDetailsFragment(Food.foods.indexOf(food)));
     }
 }
