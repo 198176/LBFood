@@ -1,7 +1,6 @@
 package com.example.user.lbfood.fragments;
 
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,7 @@ import android.widget.ListView;
 import java.util.Arrays;
 import java.util.List;
 
+import androidx.fragment.app.ListFragment;
 import androidx.navigation.Navigation;
 
 public class RestaurantFragment extends ListFragment {

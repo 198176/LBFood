@@ -7,8 +7,6 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +16,8 @@ import android.widget.TextView;
 import com.example.user.lbfood.R;
 import com.example.user.lbfood.models.Food;
 
+import androidx.core.app.NotificationCompat;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDeepLinkBuilder;
 import androidx.navigation.Navigation;
 
