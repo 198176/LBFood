@@ -49,7 +49,7 @@
         android:id="@+id/foodDetailsFragment"
         android:name="com.example.user.lbfood.fragments.FoodDetailsFragment"
         android:label="@string/food_details_fragment"
-        tools:layout="@layout/fragment_food_details" >
+        tools:layout="@layout/fragment_food_details">
         <argument
             android:name="idFood"
             app:argType="integer" />

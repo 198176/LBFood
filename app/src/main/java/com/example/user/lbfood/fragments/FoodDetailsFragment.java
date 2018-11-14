@@ -4,6 +4,7 @@ package com.example.user.lbfood.fragments;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,7 +29,10 @@ public class FoodDetailsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_food_details, container, false);
         ImageView imageView = view.findViewById(R.id.details_image);
         TextView textView = view.findViewById(R.id.details_text);
-        int extra = FoodDetailsFragmentArgs.fromBundle(getArguments()).getIdFood();
+
+//        int extra = FoodDetailsFragmentArgs.fromBundle(getArguments()).getIdFood();
+        int extra = getArguments().getInt("idFood");
+
         textView.setText(Food.foods.get(extra).getName());
         imageView.setImageDrawable(getResources().getDrawable(Food.foods.get(extra).getImageResourceId()));
         view.findViewById(R.id.details_button).setOnClickListener(new View.OnClickListener() {
@@ -41,16 +45,20 @@ public class FoodDetailsFragment extends Fragment {
         return view;
     }
 
-    void initNotify() {
+    private PendingIntent createDeepLink() {
+        return new NavDeepLinkBuilder(getContext())
+                .setGraph(R.navigation.nav_graph)
+                .setDestination(R.id.orderedFragment)
+                .createPendingIntent();
+    }
+
+    private void initNotify() {
         Notification notification = new NotificationCompat.Builder(getContext(), "channel")
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle(getContext().getString(R.string.app_name))
                 .setContentText("Zamówienie")
                 .setAutoCancel(true)
-                .setContentIntent(new NavDeepLinkBuilder(getContext())
-                        .setGraph(R.navigation.nav_graph)
-                        .setDestination(R.id.orderedFragment)
-                        .createPendingIntent())
+                .setContentIntent(createDeepLink())
                 .build();
         NotificationManager notificationManager = (NotificationManager) getContext().getSystemService(Context.NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

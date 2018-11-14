@@ -1,4 +1,4 @@
-package com.example.user.lbfood;
+package com.example.user.lbfood.receivers;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -25,7 +25,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <provider
-            android:name="com.example.user.lbfood.MySliceProvider"
+            android:name="com.example.user.lbfood.providers.MySliceProvider"
             android:authorities="com.example"
             android:exported="true">
             <intent-filter>
@@ -34,7 +34,7 @@
             </intent-filter>
         </provider>
         <receiver
-            android:name="com.example.user.lbfood.MyBroadcastReceiver"
+            android:name="com.example.user.lbfood.receivers.MyBroadcastReceiver"
             android:enabled="true"
             android:exported="true"/>
     </application>

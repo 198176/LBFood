@@ -17,8 +17,10 @@ public class RestaurantDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_restaurant_details, container, false);
         TextView textView = view.findViewById(R.id.tvDetails);
+
         String extra = RestaurantDetailsFragmentArgs.fromBundle(getArguments()).getRestName();
         final int position = RestaurantDetailsFragmentArgs.fromBundle(getArguments()).getRestID();
+
         textView.setText(extra);
         view.findViewById(R.id.btMenu).setOnClickListener(new View.OnClickListener() {
             @Override

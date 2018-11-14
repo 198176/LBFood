@@ -1,4 +1,4 @@
-package com.example.user.lbfood;
+package com.example.user.lbfood.providers;
 
 import android.app.PendingIntent;
 import android.content.ContentResolver;
@@ -6,6 +6,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.Settings;
+
+import com.example.user.lbfood.MainActivity;
+import com.example.user.lbfood.R;
+import com.example.user.lbfood.SecondActivity;
+import com.example.user.lbfood.receivers.MyBroadcastReceiver;
 
 import java.util.Random;
 
